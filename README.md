@@ -1,2 +1,2 @@
-# admin-dashboard
-Mock admin dashboard created in CSS
+# Admin-dashboard
+This project solidified many basic CSS concepts.

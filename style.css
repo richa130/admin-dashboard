@@ -1,0 +1,54 @@
+@font-face {
+    font-family: enriqueta;
+    src: url(fonts/Enriqueta-Regular.otf);
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: enriqueta;
+    src: url(fonts/Enriqueta-Bold.otf);
+    font-weight: bold;
+    
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Enriqueta', 'Times New Roman', Times, serif;
+    border: 1px solid black;
+}
+
+body {
+    height: 120vh;
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+    grid-template-rows: 1fr 6fr;
+}
+
+.sidebar {
+    background-color: rgb(121, 160, 189);
+    color: white;
+    padding: 20px;
+    font-size: 20px;
+
+    grid-row: 1 / span 2;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.sidebar-top {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.header {
+    background-color: lightcoral;
+    padding: 20px;
+}
+
+.content {
+    background-color: lightgoldenrodyellow;
+    padding: 20px;
+    grid-column: 2;
+}
