@@ -14,6 +14,8 @@
 :root {
     --misty-rose: #eed2cc;
     --vivid-tangerine: #e8998d;
+    --vivid-tangerine-highlight: #ffa99c;
+    --vivid-tangerine-dark: #d8867a;
     --polished-pine: #6c9a8b;
     --isabelline: #fbf7f4;
     --brown-sugar: #a1683a;
@@ -29,44 +31,57 @@
 body {
     min-height: 100vh;
     display: grid;
-    grid-template-columns: 1fr 5fr;
+    grid-template-columns: 1fr 4.5fr;
     grid-template-rows: 1fr 5fr;
 }
 
-.sidebar, .header, .content {
+.header, .content {
     padding: 20px;
 }
 
 .sidebar {
-    background-color: var(--vivid-tangerine);
-    color: white;
+    background-color: var(--vivid-tangerine-dark);
+    color: black;
     font-size: 20px;
     grid-row: 1 /  span 2;
-
+    padding: 20px 0px;
     display: grid;
     grid-template-rows: repeat(1fr, 3);
     align-content: start;
-    row-gap: 3em;
+    row-gap: 2.5em;
+}
+
+.sidebar-one {
+    font-size: 27px;
+    font-weight: bold;
+}
+
+.sidebar-one svg {
+    height: 35px;
+    width: 35px;
 }
 
 .sidebar-section {
     display: grid;
     grid-template-columns: 1fr 4fr;
     align-items: center;
-    row-gap: 20px;
-    column-gap: 3px;
+    padding: 10px 20px;
 }
 
-.sidebar-top {
-    font-size: 27px;
-    font-weight: bold;
+
+.sidebar-two *:hover {
+    background-color: var(--vivid-tangerine);
+    cursor: pointer;
 }
 
-.icon {
-    display: inline-block;
-    background-color: var(--brown-sugar);
-    height: 20px;
-    width: 20px;
+svg {
+    fill: black;
+    height: 24px;
+    width: 24px;
+}
+
+svg:hover {
+    fill: black;
 }
 
 .header {
