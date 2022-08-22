@@ -4,3 +4,4 @@ This project solidified many intermediate CSS concepts such as CSS Grid, custom 
 Link to project:
 
 This project includes:
+* A dark and light mode
