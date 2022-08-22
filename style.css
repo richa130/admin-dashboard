@@ -47,13 +47,14 @@
 }
 
 body {
-    min-height: 100vh; /* change to min-height if needed? */
+    min-height: 100vh;
     display: grid;
     grid-template-columns: 1fr 4fr;
     grid-template-rows: 1fr 4fr;
 }
 
 .sidebar {
+    transition: background-color 0.2s, color 0.2s;
     background-color: var(--sidebar-bck);
     color: var(--sidebar-text);
     font-size: 24px;
@@ -84,6 +85,7 @@ body {
 }
 
 .sidebar svg {
+    transition: fill 0.2s;
     fill: var(--sidebar-text);
     height: 25px;
     width: 25px;
@@ -95,6 +97,7 @@ body {
 }
 
 .header {
+    transition: background-color 0.2s, color 0.2s;
     background-color: var(--header-back);
     color: var(--header-text);
     padding: 15px 4%;
@@ -114,20 +117,22 @@ body {
     left: 0;
     right: 0;
     position: absolute;
-
 }
 
 .header>div {
     display: flex;
     align-items: center;
-    /* justify-content: space-between; */
+}
+
+.header svg {
+    fill: var(--header-text);
 }
 
 .search {
     gap: 15px;
 }
 
-.search input {
+ .search input {
     width: 85%;
     background-color: var(--misty-rose);
     outline: none;
@@ -135,18 +140,19 @@ body {
     border-radius: 15px;
     padding: 5px 10px;
     font-size: 100%;
+    z-index: 1;
+} 
+
+.search svg {
+    width: 26px;
+    height: 26px;
 }
 
 .profile-area {
-    gap: 7%;
-    justify-content: flex-end;
     font-size: 20px;
-}
-
-.search svg {
-    fill: var(--header-text);
-    width: 26px;
-    height: 26px;
+    justify-content: flex-end;
+    gap: 7%;
+    z-index: 1;
 }
 
 .profile-area img {
@@ -156,10 +162,16 @@ body {
 }
 
 .profile-area svg {
-    fill: var(--header-text);
     width: 28px;
     height: 28px;
     flex-shrink: 0;
+    transition: width 0.1s, height 0.1s; 
+
+}
+
+.profile-area svg:hover {
+    width: 37px;
+    height: 37px;
 }
 
 .buttons {
@@ -168,13 +180,23 @@ body {
 }
 
 .buttons button {
-    color: var(--isabelline);
+    color: var(--sidebar-text);
     background-color: var(--sidebar-bck);
     border: none;
     border-radius: 35px;
     height: 50%;
     width: 30%;
     font-size: 1em;
+    z-index: 1;
+}
+
+button:hover {
+    background-color: var(--sidebar-highlight);
+    cursor: pointer;
+}
+
+.greeting {
+    gap: 20px;
 }
 
 .greeting img {
@@ -183,19 +205,8 @@ body {
     border-radius: 50%;
 }
 
-.greeting {
-    gap: 20px;
-}
-
 .greeting .main {
     font-size: 27px;
-    /* font-weight: bold; */
-}
-
-.icon {
-    height: 30px;
-    width: 30px;
-    background-color: var(--brown-sugar);
 }
 
 .content {
