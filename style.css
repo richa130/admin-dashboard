@@ -49,8 +49,8 @@
 body {
     min-height: 100vh;
     display: grid;
-    grid-template-columns: 1fr 4fr;
-    grid-template-rows: 1fr 4fr;
+    grid-template-columns: 300px 1fr;
+    grid-template-rows: auto 1fr;
 }
 
 .sidebar {
@@ -63,7 +63,7 @@ body {
     display: grid;
     grid-template-rows: repeat(1fr, 3);
     align-content: start;
-    row-gap: 1.75em;
+    row-gap: 1.7em;
     z-index: 1;
 }
 
@@ -106,7 +106,7 @@ body {
     grid-template-columns: 2fr 1fr;
     row-gap: 15px;
     column-gap: 5px;
-    position: relative;
+    position: sticky;
 }
 
 .header::before {
@@ -143,6 +143,10 @@ body {
     z-index: 1;
 } 
 
+.search input:focus {
+    box-shadow: 0 0 0 2px var(--sidebar-bck);
+}
+
 .search svg {
     width: 26px;
     height: 26px;
@@ -161,17 +165,21 @@ body {
     border-radius: 50%;
 }
 
+.profile-area img:hover {
+    cursor: pointer;
+}
+
 .profile-area svg {
     width: 28px;
     height: 28px;
     flex-shrink: 0;
     transition: width 0.1s, height 0.1s; 
-
 }
 
 .profile-area svg:hover {
     width: 37px;
     height: 37px;
+    cursor: pointer;
 }
 
 .buttons {
@@ -206,27 +214,90 @@ button:hover {
 }
 
 .greeting .main {
-    font-size: 27px;
+    font-size: 26px;
+    font-weight: bold;
 }
 
 .content {
     background-color: var(--misty-rose);
     color: black;
+    font-size: 20px;
     padding: 20px;
     display: grid;
     grid-template-columns: 3fr 1fr;
+    /* grid-template-rows: 700px 700px; */
 }
+
+/* .your-projects {
+    grid-row: 1 / span 2;
+} */
 
 .side {
     display: grid;
     grid-template-rows: 1fr 1fr;
+    gap: 20px;
 }
 
-.side-div {
+.announcements, .trending {
     background-color: var(--isabelline);
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.152);
     height: 90%;
     width: 90%;
     border-radius: 10px;
+    margin-top: 15px;
 }
+
+.project-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    padding-top: 10px;
+    padding-right: 20px;
+}
+
+.project-card {
+    background-color: var(--header-back);
+    color: var(--header-text);
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.066);
+    height: 200px;
+    border-radius: 10px;
+    border-left: 13px solid var(--brown-sugar);
+    padding: 20px;
+    font-size: 16px;
+}
+
+.project-card:hover {
+    background-color: rgba(0, 0, 0, 0.183);
+    border-left: 13px solid #a1683ad4;
+    cursor: pointer;
+}
+
+.project-header {
+    font-size: 21px;
+    font-weight: bold;
+}
+
+.content svg {
+    fill: var(--header-text);
+    width: 30px;
+    height: 30px;
+    transition: width 0.1s, height 0.1s; 
+
+}
+
+.content svg:hover {
+    width: 37px;
+    height: 37px;
+    cursor: pointer;
+}
+
+.project-icons {
+    height: 40%;
+    width: 96%;
+    display: flex;
+    gap: 30px;
+    align-items: flex-end;
+    justify-content: flex-end;
+}
+
 
