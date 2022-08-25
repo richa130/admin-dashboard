@@ -12,35 +12,29 @@
 }
 
 :root.light {
-    --sidebar-bck: #e8998d;
-    --sidebar-highlight: #ffa99c;
-    --sidebar-text: white; 
+    --back1: #e8998d;
+    --text1: #fbf7f4;
+    --hover1: #ffa99c;
+    --active1: #e1897c;
 
-    --header-back: #fbf7f4;
-    --header-text: black;
-
-    --misty-rose: #eed2cc;
-    --polished-pine: #6c9a8b;
-    --isabelline: #fbf7f4;
-    --brown-sugar: #a1683a;
+    --back2: #fbf7f4;
+    --text2: rgb(28, 27, 27);
 
     --content-back: #eed2cc;
+    --search-back: rgba(201, 224, 231, 0.648);
 }
 
 :root.dark {
-    --sidebar-bck: #d8867a;
-    --sidebar-highlight: #c4776b;
-    --sidebar-text: black;
+    --back1: #d8867a;
+    --text1: rgb(28, 27, 27);
+    --hover1: #c4776b;
+    --active1: #aa6a61;
 
-    --header-back: rgb(56, 52, 52);
-    --header-text: white;
-
-    --misty-rose: #eed2cc;
-    --polished-pine: #6c9a8b;
-    --isabelline: #fbf7f4;
-    --brown-sugar: #a1683a; 
+    --back2: rgb(56, 52, 52);
+    --text2: #fbf7f4;
 
     --content-back: rgb(28, 27, 27);
+    --search-back: rgba(201, 224, 231, 0.648);
 }
 
 * {
@@ -48,8 +42,6 @@
     padding: 0px;
     font-family: 'Enriqueta', 'Times New Roman', Times, serif;
     /* border: 1px solid black; */
-    /* transition: background-color 0.2s; */
-
 }
 
 body {
@@ -63,10 +55,11 @@ body {
     transition: background-color 0.2s, color 0.2s;
 }
 
+/**********************************************************************************************/
+
 .sidebar {
-    /* transition: background-color 0.2s, color 0.2s; */
-    background-color: var(--sidebar-bck);
-    color: var(--sidebar-text);
+    background-color: var(--back1);
+    color: var(--text1);
     font-size: 24px;
     padding: 5px 0px;
     grid-row: 1 /  span 2;
@@ -77,6 +70,13 @@ body {
     z-index: 1;
 }
 
+.sidebar svg {
+    transition: fill 0.2s;
+    fill: var(--text1);
+    height: 25px;
+    width: 25px;
+}
+
 .sidebar-section {
     display: grid;
     grid-template-columns: 1fr 4fr;
@@ -84,36 +84,30 @@ body {
     padding: 10px 20px;
 }
 
-.sidebar-one {
+.sidebar-top {
     font-size: 30px;
     font-weight: bold;
 }
 
-.sidebar-two *:hover {
-    background-color: var(--sidebar-highlight);
-    cursor: pointer;
-}
-
-.sidebar-two *:active {
-    background-color: #e1897c;
-}
-
-.sidebar svg {
-    transition: fill 0.2s;
-    fill: var(--sidebar-text);
-    height: 25px;
-    width: 25px;
-}
-
-.sidebar-one svg {
+.sidebar-top svg {
     height: 40px;
     width: 40px;
 }
 
+.sidebar-bottom *:hover {
+    background-color: var(--hover1);
+    cursor: pointer;
+}
+
+.sidebar-bottom *:active {
+    background-color: var(--active1);
+}
+
+/**********************************************************************************************/
+
 .header {
-    /* transition: background-color 0.2s, color 0.2s; */
-    background-color: var(--header-back);
-    color: var(--header-text);
+    background-color: var(--back2);
+    color: var(--text2);
     padding: 15px 4%;
     display: grid;
     grid-template-rows: 1fr 1.5fr;
@@ -133,54 +127,39 @@ body {
     position: absolute;
 }
 
+.header svg {
+    fill: var(--text2);
+}
+
 .header>div {
     display: flex;
     align-items: center;
-}
-
-.header svg {
-    fill: var(--header-text);
 }
 
 .search {
     gap: 15px;
 }
 
- .search input {
-    width: 85%;
-    background-color: rgba(201, 224, 231, 0.648);
-    /* outline: none; */
-    border: none;
-    border-radius: 15px;
-    padding: 5px 10px;
-    font-size: 100%;
-    z-index: 1;
-} 
-
-/* .search input:focus {
-    box-shadow: 0 0 0 2px var(--sidebar-bck);
-} */
-
 .search svg {
     width: 26px;
     height: 26px;
 }
+
+ .search input {
+    background-color: var(--search-back);
+    width: 85%;
+    padding: 5px 10px;
+    font-size: 100%;
+    border: none;
+    border-radius: 15px;
+    z-index: 1;
+} 
 
 .profile-area {
     font-size: 20px;
     justify-content: flex-end;
     gap: 7%;
     z-index: 1;
-}
-
-.profile-area img {
-    height: 50px;
-    width: 50px;
-    border-radius: 50%;
-}
-
-.profile-area img:hover {
-    cursor: pointer;
 }
 
 .profile-area svg {
@@ -196,29 +175,39 @@ body {
     cursor: pointer;
 }
 
+.profile-area img {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+}
+
+.profile-area img:hover {
+    cursor: pointer;
+}
+
 .buttons {
     justify-content: space-between;
     align-items: center
 }
 
 .buttons button {
-    color: var(--sidebar-text);
-    background-color: var(--sidebar-bck);
-    border: none;
-    border-radius: 35px;
+    background-color: var(--back1);
+    color: var(--text1);
     height: 50%;
     width: 30%;
     font-size: 1em;
+    border: none;
+    border-radius: 35px;
     z-index: 1;
 }
 
 button:hover {
-    background-color: var(--sidebar-highlight);
+    background-color: var(--hover1);
     cursor: pointer;
 }
 
 button:active {
-    background-color: #e1897c;
+    background-color: var(--active1);
 }
 
 .greeting {
@@ -236,20 +225,29 @@ button:active {
     font-weight: bold;
 }
 
+/**********************************************************************************************/
+
 .content {
-    /* transition: background-color 0.2s, color 0.2s; */
     background-color: var(--content-back);
-    color: var(--header-text);
+    color: var(--text2);
     font-size: 20px;
     padding: 20px;
     display: grid;
-    grid-template-columns: 3fr 1fr;
-    /* grid-template-rows: 700px 700px; */
+    grid-template-columns: 1fr 280px;
 }
 
-/* .your-projects {
-    grid-row: 1 / span 2;
-} */
+.content svg {
+    fill: var(--text2);
+    width: 30px;
+    height: 30px;
+    transition: width 0.1s, height 0.1s; 
+}
+
+.content svg:hover {
+    width: 37px;
+    height: 37px;
+    cursor: pointer;
+}
 
 .content-header {
     font-weight: bold;
@@ -262,20 +260,18 @@ button:active {
 }
 
 .announcements, .trending {
-    background-color: var(--header-back);
-    color: var(--header-text);
-    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.152);
-    /* height: 90%;
-    width: 90%; */
-    border-radius: 10px;
+    background-color: var(--back2);
+    color: var(--text2);
+    font-size: 15px;
     margin-top: 15px;
     padding: 25px;
-    font-size: 15px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.152);
 }
 
 .announcements>div {
     padding: 10px;
-    border-bottom: 1px solid var(--header-text);
+    border-bottom: 1px solid var(--text2);
 }
 
 .announcements div:last-child {
@@ -309,14 +305,15 @@ button:active {
 }
 
 .project-card {
-    background-color: var(--header-back);
+    background-color: var(--back2);
     color: var(--header-text);
-    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.066);
-    height: 200px;
-    border-radius: 10px;
+    font-size: 16px;
     border-left: 13px solid rgb(134, 188, 194);
     padding: 20px;
-    font-size: 16px;
+    height: 200px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.066);
+    overflow-y: auto;
 }
 
 .project-card:hover {
@@ -326,20 +323,6 @@ button:active {
 .project-header {
     font-size: 21px;
     font-weight: bold;
-}
-
-.content svg {
-    fill: var(--header-text);
-    width: 30px;
-    height: 30px;
-    transition: width 0.1s, height 0.1s; 
-
-}
-
-.content svg:hover {
-    width: 37px;
-    height: 37px;
-    cursor: pointer;
 }
 
 .project-icons {
