@@ -84,6 +84,10 @@ body {
     cursor: pointer;
 }
 
+.sidebar-two *:active {
+    background-color: #e1897c;
+}
+
 .sidebar svg {
     transition: fill 0.2s;
     fill: var(--sidebar-text);
@@ -203,6 +207,10 @@ button:hover {
     cursor: pointer;
 }
 
+button:active {
+    background-color: #e1897c;
+}
+
 .greeting {
     gap: 20px;
 }
@@ -241,10 +249,39 @@ button:hover {
 .announcements, .trending {
     background-color: var(--isabelline);
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.152);
-    height: 90%;
-    width: 90%;
+    /* height: 90%;
+    width: 90%; */
     border-radius: 10px;
     margin-top: 15px;
+    padding: 25px;
+    font-size: 15px;
+}
+
+.announcements>div {
+    padding: 10px;
+    border-bottom: 1px solid black;
+}
+
+.announcements div:last-child {
+    border-bottom: none;
+}
+
+.announcement-header {
+    font-size: 20px;
+}
+
+.trending-section {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.trending-pfp {
+    height: 50px;
+    width: 50px;
+    background-color: #6c9a8b;
+    border-radius: 50%;
 }
 
 .project-cards {
@@ -261,14 +298,12 @@ button:hover {
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.066);
     height: 200px;
     border-radius: 10px;
-    border-left: 13px solid var(--brown-sugar);
+    border-left: 13px solid var(--polished-pine);
     padding: 20px;
     font-size: 16px;
 }
 
 .project-card:hover {
-    background-color: rgba(0, 0, 0, 0.183);
-    border-left: 13px solid #a1683ad4;
     cursor: pointer;
 }
 
