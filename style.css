@@ -45,7 +45,7 @@
 }
 
 body {
-    min-height: 100vh;
+    height: 100vh;
     display: grid;
     grid-template-columns: 300px 1fr;
     grid-template-rows: auto 1fr;
@@ -67,7 +67,7 @@ body {
     grid-template-rows: repeat(1fr, 3);
     align-content: start;
     row-gap: 1.7em;
-    z-index: 1;
+    z-index: 3;
 }
 
 .sidebar svg {
@@ -114,17 +114,8 @@ body {
     grid-template-columns: 2fr 1fr;
     row-gap: 15px;
     column-gap: 5px;
-    position: sticky;
-}
-
-.header::before {
-    content: "";
     box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.152);
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    position: absolute;
+    z-index: 2;
 }
 
 .header svg {
@@ -152,14 +143,14 @@ body {
     font-size: 100%;
     border: none;
     border-radius: 15px;
-    z-index: 1;
+    /* z-index: 1; */
 } 
 
 .profile-area {
     font-size: 20px;
     justify-content: flex-end;
     gap: 7%;
-    z-index: 1;
+    /* z-index: 1; */
 }
 
 .profile-area svg {
@@ -198,7 +189,7 @@ body {
     font-size: 1em;
     border: none;
     border-radius: 35px;
-    z-index: 1;
+    /* z-index: 1; */
 }
 
 button:hover {
@@ -234,6 +225,7 @@ button:active {
     padding: 20px;
     display: grid;
     grid-template-columns: 1fr 280px;
+    overflow: auto;
 }
 
 .content svg {
@@ -255,13 +247,14 @@ button:active {
 
 .side {
     display: grid;
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: 420px 420px;
     gap: 20px;
 }
 
 .announcements, .trending {
     background-color: var(--back2);
     color: var(--text2);
+    height: 325px;
     font-size: 15px;
     margin-top: 15px;
     padding: 25px;
@@ -285,22 +278,22 @@ button:active {
 
 .trending-section {
     padding: 10px;
+    margin-bottom: 10px;
     display: flex;
     align-items: center;
     gap: 15px;
     cursor: pointer;
 }
 
-
 .trending-pfp {
-    height: 50px;
-    width: 50px;
+    height: 55px;
+    width: 55px;
     border-radius: 50%;
 }
 
 .project-cards {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
     gap: 30px;
     padding-top: 10px;
     padding-right: 20px;
@@ -309,6 +302,7 @@ button:active {
 .project-card {
     background-color: var(--back2);
     color: var(--header-text);
+    /* width: 330px; */
     font-size: 16px;
     border-left: 13px solid rgb(134, 188, 194);
     padding: 20px;
@@ -316,6 +310,7 @@ button:active {
     border-radius: 10px;
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.066);
     overflow-y: auto;
+    position: relative;
 }
 
 .project-card:hover {
@@ -328,12 +323,11 @@ button:active {
 }
 
 .project-icons {
-    height: 40%;
-    width: 96%;
     display: flex;
     gap: 30px;
-    align-items: flex-end;
-    justify-content: flex-end;
+    position: absolute;
+    right: 30px;
+    bottom: 30px;
 }
 
 
