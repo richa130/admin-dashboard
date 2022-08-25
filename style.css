@@ -143,14 +143,12 @@ body {
     font-size: 100%;
     border: none;
     border-radius: 15px;
-    /* z-index: 1; */
 } 
 
 .profile-area {
     font-size: 20px;
     justify-content: flex-end;
     gap: 7%;
-    /* z-index: 1; */
 }
 
 .profile-area svg {
@@ -189,7 +187,6 @@ body {
     font-size: 1em;
     border: none;
     border-radius: 35px;
-    /* z-index: 1; */
 }
 
 button:hover {
@@ -301,8 +298,7 @@ button:active {
 
 .project-card {
     background-color: var(--back2);
-    color: var(--header-text);
-    /* width: 330px; */
+    color: var(--header-text); 
     font-size: 16px;
     border-left: 13px solid rgb(134, 188, 194);
     padding: 20px;
